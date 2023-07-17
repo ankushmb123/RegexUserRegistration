@@ -45,12 +45,13 @@ namespace RegexUserRegistration
         }
         public void Checkpassward(string Passward)
         {
-            string passwardpattern = "^[A-Za-z0-9]{8,20}$";
+
+            //string passwardpattern = "^[A-Za-z0-9]{8,20}$"; 
+            string passwardpattern = "^(?=.*[A-Z])(?=.*[a-z]{8,}).*$";
             if (Regex.IsMatch(Passward, passwardpattern))
                 Console.WriteLine("Passward is valid");
             else
                 Console.WriteLine("Invalid passward!!");
         }
-
     }
 }
